@@ -1,0 +1,68 @@
+/*HEADER*/
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: cadetblue;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+
+  background-color: darkseagreen;
+}
+
+.nav-items li {
+  margin: 15px;
+}
+
+/* PHOTOS ROUTE */
+
+.photos-container {
+}
+
+.image-list-container {
+  display: flex;
+  flex-flow: row wrap;
+  border-style: solid;
+  border-color: cadetblue;
+}
+
+.photo-container {
+  padding: 10px;
+}
+
+.photo {
+  height: 400px;
+  width: 600px;
+  border-style: solid;
+
+  border-color: cadetblue;
+}
+
+.photo-container-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: darkblue;
+}
+
+/* ENLARGED PHOTO */
+
+.enlarged-photo-container {
+  background-color: darkorange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enlarged-photo {
+  border-style: solid;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
