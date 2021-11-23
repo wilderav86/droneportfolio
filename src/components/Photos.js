@@ -3,15 +3,12 @@ import dronePhotos from "../assets/IMG/index.js";
 import EnlargedPhoto from "./EnlargedPhoto.js";
 import ImageFadeIn from "react-image-fade-in";
 
-const Photos = () => {
-  //TODO: figure out how to transfer image src data to EnlargedPhoto and render image onclick
-
+const Photos = ({ clickedPhoto, setClickedPhoto }) => {
   //STATE:
   const [enlargedPhoto, setEnlargedPhoto] = useState({
     src: "",
     title: "",
   });
-  const [clickedPhoto, setClickedPhoto] = useState(false);
 
   //HANDLERS:
   const handleEnlargePhoto = (e) => {
@@ -24,6 +21,7 @@ const Photos = () => {
   };
 
   //FUNCTIONS:
+
   const mappedDronePhotos = dronePhotos.map((photo) => {
     return (
       <div className="photo-container" key={photo.id}>
@@ -34,10 +32,7 @@ const Photos = () => {
           key={photo.id}
           onClick={handleEnlargePhoto}
         />
-        <p>
-          {photo.src}
-          {photo.title}
-        </p>
+        <p className="photo-title">{photo.title}</p>
       </div>
     );
   });
