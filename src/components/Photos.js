@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import dronePhotos from "../assets/IMG/index.js";
 import EnlargedPhoto from "./EnlargedPhoto.js";
 import ImageFadeIn from "react-image-fade-in";
