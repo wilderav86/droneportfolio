@@ -27,6 +27,8 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
     counter.current += 1;
     if (counter.current >= dronePhotos.length) {
       setIsLoaded(true);
+      console.log("all are loaded");
+      console.log(isLoaded);
     }
 
     console.log(isLoaded);
@@ -54,6 +56,7 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
   return (
     <div className="photos-container">
       <div className="image-list-container">
+        {!isLoaded && <Loading />}
         {clickedPhoto ? (
           <EnlargedPhoto
             enlargedPhoto={enlargedPhoto}
@@ -63,7 +66,6 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
         ) : (
           mappedDronePhotos
         )}
-        {!isLoaded && <Loading />}
       </div>
     </div>
   );
