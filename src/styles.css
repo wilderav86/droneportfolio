@@ -54,7 +54,7 @@
   padding: 10px;
 }
 
-.photo {
+.photo-visible {
   height: 400px;
   width: 600px;
   border-style: solid;
@@ -62,6 +62,10 @@
   border-color: cadetblue;
 
   cursor: zoom-in;
+}
+
+.photo-hidden {
+  opacity: 0;
 }
 
 .photo-container-overlay {
@@ -106,4 +110,12 @@
 .drone-video {
   height: 400px;
   width: 600px;
+}
+
+/*LOADING*/
+
+.loader-conatiner {
+  height: 500px;
+  width: 500px;
+  background-color: darkred;
 }

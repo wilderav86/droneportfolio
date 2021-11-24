@@ -5,6 +5,7 @@ import Header from "./Header";
 import Videos from "./Videos";
 import Home from "./Home";
 import Photos from "./Photos";
+
 import "../assets/Videos";
 
 import "../styles.css";
@@ -12,6 +13,7 @@ import Contact from "./Contact";
 
 const App = () => {
   const [clickedPhoto, setClickedPhoto] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div>
@@ -23,10 +25,16 @@ const App = () => {
           <Route
             path="/photos"
             element={
+              //!isLoaded ? (
+              // <Loading />
+              //) : (
               <Photos
                 clickedPhoto={clickedPhoto}
                 setClickedPhoto={setClickedPhoto}
+                isLoaded={isLoaded}
+                setIsLoaded={setIsLoaded}
               />
+              //)
             }
           />
           <Route path="/Videos" element={<Videos />} />
