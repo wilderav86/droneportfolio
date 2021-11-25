@@ -16,8 +16,8 @@ const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div>
-      <div>{!clickedPhoto && <Header />}</div>
+    <div className="app-container">
+      {!clickedPhoto && <Header />}
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,16 +25,12 @@ const App = () => {
           <Route
             path="/photos"
             element={
-              //!isLoaded ? (
-              // <Loading />
-              //) : (
               <Photos
                 clickedPhoto={clickedPhoto}
                 setClickedPhoto={setClickedPhoto}
                 isLoaded={isLoaded}
                 setIsLoaded={setIsLoaded}
               />
-              //)
             }
           />
           <Route path="/Videos" element={<Videos />} />

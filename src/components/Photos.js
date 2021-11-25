@@ -22,23 +22,20 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
     }));
     setClickedPhoto(!clickedPhoto);
   };
-  console.log(dronePhotos.length);
+
   const handleLoader = () => {
     counter.current += 1;
     if (counter.current >= dronePhotos.length) {
       setIsLoaded(true);
-      console.log("all are loaded");
-      console.log(isLoaded);
     }
-
-    console.log(isLoaded);
-    console.log("loaded");
-    console.log(counter);
   };
 
   const mappedDronePhotos = dronePhotos.map((photo) => {
     return (
-      <div className="photo-container" key={photo.id}>
+      <div
+        className={`photo-container-${isLoaded ? "visible" : "hidden"}`}
+        key={photo.id}
+      >
         <ImageFadeIn
           className={`photo-${isLoaded ? "visible" : "hidden"}`}
           src={photo.src}
