@@ -1,5 +1,21 @@
 /*APP*/
+html ::-webkit-scrollbar {
+  display: none;
+}
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+}
 /*HEADER*/
 
 .header-container {
@@ -7,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   height: 5%;
+  width: 100%;
   background-position: center;
   background-color: rgb(232, 239, 240);
 }
@@ -38,14 +55,16 @@
 /*HOME ROUTE*/
 
 .home-container {
+  display: flex;
+  height: 95%;
+  width: 100%;
   overflow: hidden;
 }
 
 .landing-page-video {
-  display: flex;
   height: 95%;
-  width: 120%;
-  background-size: cover;
+  width: 100%;
+
   overflow: hidden;
 }
 
@@ -57,6 +76,7 @@
   justify-content: space-around;
   border-style: solid;
   border-color: cadetblue;
+  overflow: visible;
 }
 
 .photo-container-visible {
@@ -126,8 +146,13 @@
 }
 
 @media (max-width: 600px) {
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+
   .title {
-    font-size: 1.25rem;
+    font-size: 0.55rem;
   }
   .app-container {
     display: flex;
@@ -135,6 +160,10 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  .header-container {
+    height: 10vh;
   }
 
   .image-list-container {
@@ -151,5 +180,17 @@
     height: 100%;
     width: 100%;
     object-fit: contain;
+  }
+
+  .home-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .landing-page-video {
+    width: auto;
+    height: 95%;
+    margin: 0 -80px 0 -150px;
   }
 }
