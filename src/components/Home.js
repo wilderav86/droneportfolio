@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
   return (
     <div className="home-container">
-      <video className="landing-page-video" loop autoPlay muted>
+      <video className="landing-page-video" loop autoPlay muted playsInline>
         <source
           src={require("../assets/Videos/Kite.mp4").default}
           type="video/mp4"
