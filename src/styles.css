@@ -73,7 +73,7 @@ html {
 .image-list-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-style: solid;
   border-color: cadetblue;
   overflow: visible;
@@ -112,6 +112,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .enlarged-photo {
@@ -127,15 +129,20 @@ html {
 
 .videos-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-style: solid;
-  border-color: darkcyan;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  border-color: cadetblue;
 }
 
-.drone-video {
-  height: 400px;
-  width: 600px;
+iframe {
+  height: 75%;
+  width: 75%;
+  border-radius: 4px;
+  border-color: cadetblue;
 }
 
 /*LOADING*/
@@ -146,14 +153,13 @@ html {
 }
 
 @media only screen and (max-width: 480px) {
+  /*APP*/
+
   #root {
     height: 100%;
     width: 100%;
   }
 
-  .title {
-    font-size: 0.75rem;
-  }
   .app-container {
     display: flex;
     flex-direction: column;
@@ -161,9 +167,36 @@ html {
     width: 100%;
   }
 
+  /* HEADER */
+
+  .title {
+    font-size: 0.75rem;
+  }
+
   .header-container {
     height: 10vh;
   }
+
+  /*HOME*/
+
+  .home-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .landing-page-video {
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    margin-left: -375px;
+  }
+
+  /*PHOTOS*/
 
   .image-list-container {
     height: 100%;
@@ -172,8 +205,8 @@ html {
   }
 
   .photo-container-visible {
-    height: 40%;
-    width: 40%;
+    height: 50%;
+    width: 50%;
     object-fit: contain;
   }
 
@@ -183,23 +216,47 @@ html {
     object-fit: contain;
   }
 
-  .home-container {
+  /* ENLARGED PHOTO */
+
+  .enlarged-photo-container {
+    background-color: rgb(138, 131, 123);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    z-index: -1;
   }
 
-  .landing-page-video {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100vh;
-    height: 100vh;
+  .enlarged-photo {
+    width: 200%;
+    height: auto;
     object-fit: cover;
-    z-index: -1;
-    margin-left: -270px;
+    border-radius: 4px;
+    border-color: cadetblue;
+    cursor: zoom-out;
+  }
+}
+
+@media only screen and (max-width: 480px) and (orientation: landscape) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .enlarged-photo-container {
+    background-color: rgb(138, 131, 123);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .enlarged-photo {
+    object-fit: contain;
+
+    cursor: zoom-out;
   }
 }

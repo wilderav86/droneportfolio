@@ -9,8 +9,8 @@ const EnlargedPhoto = ({ enlargedPhoto, clickedPhoto, setClickedPhoto }) => {
   return (
     <div className="enlarged-photo-container">
       <ImageFadeIn
-        onClick={toggleClickedPhoto}
         className="enlarged-photo"
+        onClick={toggleClickedPhoto}
         src={enlargedPhoto.src}
       />
     </div>
