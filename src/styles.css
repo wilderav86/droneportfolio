@@ -31,32 +31,97 @@ html {
 .title {
   display: flex;
   margin: 10px;
+  padding-left: 1em;
 }
+
+/*Nav*/
 
 .nav-items {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-evenly;
   list-style-type: none;
+  font-size: 1.5rem;
 }
 
-.nav-items li {
-  margin: 5px;
+.nav-list-items {
+}
+
+.nav-items a {
+  color: black;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .nav-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  float: left;
+}
+
+.dropdown li {
+  color: rgba(60, 81, 172, 0.37);
+}
+
+.dropdown .drop-button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  margin: 0;
+  color: black;
+}
+
+.drop-button {
+  align-self: center;
+  color: black;
+  padding: 5px;
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li {
+  float: none;
+  font-size: 0.75em;
+  color: rgb(232, 239, 240);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.drop-button:hover {
+  border-radius: 5px;
+  border: none;
+  color: rgb(232, 239, 240);
+  background-color: cadetblue;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: cadetblue;
+  border-radius: 5px;
 }
 
 /*HOME ROUTE*/
 
 .home-container {
   display: flex;
-  height: 95%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -130,19 +195,31 @@ html {
 .videos-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+
+  align-content: flex-start;
   height: 100%;
   width: 100%;
   border-radius: 4px;
   border-color: cadetblue;
 }
 
-iframe {
+.video-responsive {
+  display: flex;
+  flex-direction: row;
+
+  align-content: center;
+}
+
+.drone-video {
   height: 75%;
   width: 75%;
+  margin: 2%;
   border-radius: 4px;
   border-color: cadetblue;
+}
+
+.video-description {
+  align-self: center;
 }
 
 /*LOADING*/
