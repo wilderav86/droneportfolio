@@ -1,28 +1,43 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const dropdownRef = useRef(null);
+  const [listOpen, setListOpen] = useDetectOutsideClick(dropdownRef, false);
+
   const pages = ["Home", "Media", "Contact"];
   const mediaSubPages = ["Photos", "Videos"];
+
+  const handleClick = () => setListOpen(!listOpen);
 
   const mappedPages = pages.map((page, id) => {
     if (page === "Media") {
       return (
-        <div className="dropdown">
-          <li className="drop-button">
+        <div className="dropdown-container">
+          <li className="drop-button" onClick={handleClick}>
             {page}
-            <div className="dropdown-content">
-              {mediaSubPages.map((subPage, id) => {
+          </li>
+          <nav
+            ref={dropdownRef}
+            className={`dropdown-content ${listOpen ? "open" : "closed"}`}
+          >
+            <ul className="dropdown-ul">
+              {mediaSubPages.map((subPage, subPageId) => {
                 return (
-                  <Link to={`/${subPage}`} key={id}>
-                    <li className="nav-list-items" key={id}>
+                  <Link to={`/${subPage}`} key={subPageId}>
+                    <li
+                      className="dropdown-list-item"
+                      key={subPageId}
+                      onClick={handleClick}
+                    >
                       {subPage}
                     </li>
                   </Link>
                 );
               })}
-            </div>
-          </li>
+            </ul>
+          </nav>
         </div>
       );
     }
