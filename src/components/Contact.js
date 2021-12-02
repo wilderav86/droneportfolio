@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
@@ -9,6 +10,7 @@ const Contact = () => {
           type="video/mp4"
         />
       </video>
+      <ContactForm />
     </div>
   );
 };
