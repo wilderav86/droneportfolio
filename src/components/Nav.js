@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
 import { Link } from "react-router-dom";
 
