@@ -15,7 +15,10 @@ const Nav = () => {
     if (page === "Media") {
       return (
         <div className="dropdown-container">
-          <li className="drop-button" onClick={handleClick}>
+          <li
+            className={`drop-button ${listOpen ? "open" : "closed"}`}
+            onClick={handleClick}
+          >
             {page}
           </li>
           <nav

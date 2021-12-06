@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./Nav";
 
 const Header = () => {
-  const title = "Adam Wilder Aerial Photography";
+  const title = "ADAM WILDER AERIAL PHOTOGRAPHY";
 
   return (
     <div className="header-container">
