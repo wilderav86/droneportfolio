@@ -284,6 +284,7 @@ ul {
 
 .social-media-container {
   display: flex;
+  justify-self: center;
 }
 
 .icon-container {
@@ -439,6 +440,8 @@ ul {
   .icon-container {
     color: black;
     margin: 0px;
+
+    /* visibility: hidden; */
   }
 }
 
