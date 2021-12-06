@@ -18,7 +18,7 @@ const Contact = () => {
             type="video/mp4"
           />
         </video>
-        <SocialMedia />
+        {/* <SocialMedia /> */}
         <ContactForm />
       </div>
     </React.Fragment>

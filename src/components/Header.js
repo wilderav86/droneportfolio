@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
+import SocialMedia from "./SocialMedia";
 
 const Header = () => {
   const title = "ADAM WILDER AERIAL PHOTOGRAPHY";
@@ -9,6 +10,7 @@ const Header = () => {
       <div className="title-container">
         <h1 className="title">{title}</h1>
       </div>
+      <SocialMedia />
       <Nav />
     </div>
   );

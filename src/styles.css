@@ -30,6 +30,7 @@ ul {
   width: 100%;
   background-position: center;
   background-color: rgb(232, 239, 240);
+  border-bottom: solid rgb(80, 87, 90);
 }
 
 .title {
@@ -48,6 +49,7 @@ ul {
   list-style-type: none;
   font-size: 1.75rem;
   margin-right: 10px;
+  margin-left: -45px;
 }
 
 .nav-items a {
@@ -98,10 +100,12 @@ ul {
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .dropdown-list-item {
   margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 .dropdown-ul a {
@@ -145,7 +149,7 @@ ul {
 .landing-page-video {
   height: 95%;
   width: 100%;
-
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -155,9 +159,9 @@ ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  border-style: solid;
-  border-color: cadetblue;
+
   overflow: visible;
+  background-color: rgb(224, 222, 198);
 }
 
 .photo-container-visible {
@@ -230,24 +234,42 @@ ul {
 
 /* CONTACT ROUTE */
 
-.contact-container {
-  display: flex;
-  flex-flow: column wrap;
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
 .ui.raised.very.padded.text.container.segment {
   display: flex;
+  position: relative;
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   background: rgba(177, 212, 235, 0.75);
   height: 60%;
   width: 40%;
+
   /* align-self: flex-start; */
   z-index: 1;
+}
+
+.contact-container {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.form-container {
+  position: absolute;
+  align-content: center;
+  height: 80%;
+  width: 80%;
+}
+
+.form-title {
+  align-self: center;
+  margin: 5px;
+}
+
+.ui.form {
+  margin: 5px;
 }
 
 .contact-background-video {
@@ -256,6 +278,17 @@ ul {
   object-fit: contain;
   z-index: -1;
   position: absolute;
+}
+
+/* SOCIALMEDIA */
+
+.social-media-container {
+  display: flex;
+}
+
+.icon-container {
+  color: black;
+  margin: 4px;
 }
 
 /*LOADING*/
@@ -382,12 +415,30 @@ ul {
     overflow: hidden;
   }
 
+  .ui.raised.very.padded.text.container.segment {
+    height: 80%;
+  }
+
   .contact-background-video {
     position: absolute;
     width: 100vh;
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* SOCIAL MEDIA MOBILE */
+
+  .icon-container {
+    color: black;
+    margin: 0px;
   }
 }
 

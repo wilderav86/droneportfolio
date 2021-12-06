@@ -22,8 +22,8 @@ const SocialMedia = () => {
   const mappedLinks = mediaLinks.map((link, id) => {
     return (
       <a href={link.src} key={id}>
-        <div>
-          <Icon name={link.className} size="big" />
+        <div className="icon-container">
+          <Icon className={link.className} size="big" />
         </div>
       </a>
     );
