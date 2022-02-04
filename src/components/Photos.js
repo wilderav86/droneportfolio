@@ -41,8 +41,8 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
           src={photo.src}
           alt={photo.title}
           key={photo.id}
-          onClick={handleEnlargePhoto}
           onLoad={handleLoader}
+          onClick={handleEnlargePhoto}
         />
 
         <p className="photo-title">{photo.title}</p>
@@ -54,6 +54,7 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
     <div className="photos-container">
       <div className="image-list-container">
         {!isLoaded && <Loading />}
+
         {clickedPhoto ? (
           <EnlargedPhoto
             enlargedPhoto={enlargedPhoto}

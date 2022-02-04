@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap");
+
 /*APP*/
 html ::-webkit-scrollbar {
   display: none;
@@ -7,13 +9,20 @@ html {
   scrollbar-width: none;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 ul {
   list-style: none;
 }
 
 .content {
   height: 100%;
-  width: 100%;
+  width: 100vw;
 }
 
 .app-container {
@@ -26,7 +35,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5%;
+  height: 8%;
   width: 100%;
   background-position: center;
   background-color: rgb(232, 239, 240);
@@ -34,6 +43,7 @@ ul {
 }
 
 .title {
+  font-family: "Josefin Sans", sans-serif;
   display: flex;
   margin: 10px;
   padding-left: 1em;
@@ -47,9 +57,10 @@ ul {
   align-items: center;
   justify-content: space-evenly;
   list-style-type: none;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   margin-right: 10px;
   margin-left: -45px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .nav-items a {
@@ -100,7 +111,7 @@ ul {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 10;
 }
 
 .dropdown-list-item {
@@ -147,10 +158,11 @@ ul {
 }
 
 .landing-page-video {
-  height: 95%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
   z-index: -1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* PHOTOS ROUTE */
@@ -214,9 +226,46 @@ ul {
 
 .videos-container {
   display: flex;
+  background-color: rgb(37, 35, 32);
   flex-direction: column;
 
-  align-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
+  /* height: 90%;
+  width: 90%; */
+}
+
+.video-responsive {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  margin: 30px;
+}
+
+.drone-video-container {
+  width: 60vw;
+}
+
+.drone-video {
+  aspect-ratio: 16 / 9;
+}
+
+.video-description {
+  width: 40%;
+  text-align: center;
+  margin: 40px;
+  font-size: 2rem;
+  color: white;
+}
+
+/* .videos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   height: 100%;
   width: 100%;
   border-radius: 4px;
@@ -228,9 +277,13 @@ ul {
   width: 80%;
 }
 
-.video-description {
+.drone-video-container .video-description {
   align-self: center;
 }
+
+.drone-video { 
+  
+}*/
 
 /* CONTACT ROUTE */
 
@@ -245,15 +298,16 @@ ul {
   width: 40%;
 
   /* align-self: flex-start; */
-  z-index: 1;
+  z-index: -1;
 }
 
 .contact-container {
   display: flex;
   flex-flow: column wrap;
-  position: absolute;
+  /* position: absolute; */
   height: 100%;
   width: 100%;
+  z-index: -1;
 }
 
 .form-container {
@@ -273,11 +327,14 @@ ul {
 }
 
 .contact-background-video {
-  height: auto;
+  /* height: auto;
   width: 100%;
-  object-fit: contain;
+  object-fit: contain; */
   z-index: -1;
   position: absolute;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
 }
 
 /* SOCIALMEDIA */
@@ -310,6 +367,11 @@ ul {
 
   .dropdown-list-item {
     font-size: 1rem;
+  }
+
+  .video-responsive {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -404,6 +466,21 @@ ul {
   }
 
   /* VIDEOS MOBILE */
+
+  .video-responsive {
+    height: 100%;
+    width: 100%;
+  }
+
+  .drone-video-container {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: auto;
+  }
+
+  .drone-video {
+  }
 
   /* CONTACT MOBILE */
 
