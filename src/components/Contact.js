@@ -1,15 +1,26 @@
 import React from "react";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <div className="contact-container">
-      <video className="landing-page-video" loop autoPlay muted>
-        <source
-          src={require("../assets/Videos/crane.mp4").default}
-          type="video/mp4"
-        />
-      </video>
-    </div>
+    <React.Fragment>
+      <div className="contact-container">
+        <video
+          className="contact-background-video"
+          loop
+          autoPlay
+          muted
+          playsInline
+        >
+          <source
+            src={require("../assets/Videos/crane.mp4").default}
+            type="video/mp4"
+          />
+        </video>
+        {/* <SocialMedia /> */}
+        <ContactForm />
+      </div>
+    </React.Fragment>
   );
 };
 
