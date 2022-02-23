@@ -380,7 +380,7 @@ ul {
 
   #root {
     height: 100%;
-    width: 100%;
+    width: 100vw;
   }
 
   .app-container {
@@ -457,7 +457,6 @@ ul {
   }
 
   .enlarged-photo {
-    width: 200%;
     height: auto;
     object-fit: cover;
     border-radius: 4px;

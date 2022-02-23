@@ -8,35 +8,35 @@ import Photos from "./Photos";
 
 import "../assets/Videos";
 import "../styles.css";
+import EnlargedPhoto from "./EnlargedPhoto";
 
 const App = () => {
-  const [clickedPhoto, setClickedPhoto] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [enlargedPhoto, setEnlargedPhoto] = useState({
+    src: "",
+    title: "",
+  });
 
   return (
     <div className="app-container">
-      {!clickedPhoto && <Header />}
-
+      <Header />
       <div className="content">
         <Routes>
-          <Route
-            path="/"
-            element={<Home setClickedPhoto={setClickedPhoto} />}
-          />
-          <Route
-            path="/home"
-            element={<Home setClickedPhoto={setClickedPhoto} />}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route
             path="/photos"
             element={
               <Photos
-                clickedPhoto={clickedPhoto}
-                setClickedPhoto={setClickedPhoto}
                 isLoaded={isLoaded}
                 setIsLoaded={setIsLoaded}
+                setEnlargedPhoto={setEnlargedPhoto}
               />
             }
+          />
+          <Route
+            path="/enlargedphoto"
+            element={<EnlargedPhoto enlargedPhoto={enlargedPhoto} />}
           />
           <Route path="/Videos" element={<Videos />} />
           <Route path="/Contact" element={<Contact />} />

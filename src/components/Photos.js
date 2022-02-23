@@ -1,15 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import dronePhotos from "../assets/IMG/index.js";
-import EnlargedPhoto from "./EnlargedPhoto.js";
-import Loading from "./Loading.js";
 import ImageFadeIn from "react-image-fade-in";
+import { Link } from "react-router-dom";
 
-const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
+const Photos = ({ isLoaded, setIsLoaded, setEnlargedPhoto }) => {
   //STATE:
-  const [enlargedPhoto, setEnlargedPhoto] = useState({
-    src: "",
-    title: "",
-  });
 
   const counter = useRef(0);
 
@@ -20,7 +15,6 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
       src: e.target.src,
       alt: e.target.alt,
     }));
-    setClickedPhoto(!clickedPhoto);
   };
 
   const handleLoader = () => {
@@ -36,35 +30,25 @@ const Photos = ({ clickedPhoto, setClickedPhoto, isLoaded, setIsLoaded }) => {
         className={`photo-container-${isLoaded ? "visible" : "hidden"}`}
         key={photo.id}
       >
-        <ImageFadeIn
-          className={`photo-${isLoaded ? "visible" : "hidden"}`}
-          src={photo.src}
-          alt={photo.title}
-          key={photo.id}
-          onLoad={handleLoader}
-          onClick={handleEnlargePhoto}
-        />
+        <Link to="/enlargedPhoto">
+          <ImageFadeIn
+            className={`photo-${isLoaded ? "visible" : "hidden"}`}
+            src={photo.src}
+            alt={photo.title}
+            key={photo.id}
+            onLoad={handleLoader}
+            onClick={handleEnlargePhoto}
+          />
 
-        <p className="photo-title">{photo.title}</p>
+          <p className="photo-title">{photo.title}</p>
+        </Link>
       </div>
     );
   });
 
   return (
     <div className="photos-container">
-      <div className="image-list-container">
-        {!isLoaded && <Loading />}
-
-        {clickedPhoto ? (
-          <EnlargedPhoto
-            enlargedPhoto={enlargedPhoto}
-            setClickedPhoto={setClickedPhoto}
-            clickedPhoto={clickedPhoto}
-          />
-        ) : (
-          mappedDronePhotos
-        )}
-      </div>
+      <div className="image-list-container">{mappedDronePhotos}</div>
     </div>
   );
 };

@@ -4,13 +4,6 @@ import { Icon } from "semantic-ui-react";
 const SocialMedia = () => {
   const mediaLinks = [
     {
-      name: "instagram",
-
-      src: "https://www.instagram.com/wilderav/",
-
-      className: "instagram icon",
-    },
-    {
       name: "youtube",
 
       src: "https://www.youtube.com/channel/UCSSb61glUyRxHTGOF4X9ivg",

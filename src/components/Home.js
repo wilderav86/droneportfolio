@@ -1,8 +1,8 @@
 import React from "react";
 
-const Home = ({ setClickedPhoto }) => {
+const Home = () => {
   return (
-    <div className="home-container" onLoad={setClickedPhoto(false)}>
+    <div className="home-container">
       <video className="landing-page-video" loop autoPlay muted playsInline>
         <source
           src={require("../assets/Videos/Kite.mp4").default}
