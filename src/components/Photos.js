@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import dronePhotos from "../assets/IMG/index.js";
 import ImageFadeIn from "react-image-fade-in";
 import { Link } from "react-router-dom";
+import Loading from "./Loading.js";
 
 const Photos = ({ isLoaded, setIsLoaded, setEnlargedPhoto }) => {
   //STATE:
@@ -48,6 +49,7 @@ const Photos = ({ isLoaded, setIsLoaded, setEnlargedPhoto }) => {
 
   return (
     <div className="photos-container">
+      {!isLoaded && <Loading />}
       <div className="image-list-container">{mappedDronePhotos}</div>
     </div>
   );
