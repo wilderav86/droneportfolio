@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContactForm = () => {
-  const formTitle = "Email me to inquire about";
+  const formTitle = "CONTACT";
 
   return (
     <div className="ui raised very padded text container segment">
