@@ -173,7 +173,7 @@ ul {
   justify-content: space-evenly;
 
   overflow: visible;
-  background-color: rgb(224, 222, 198);
+  background-color: rgb(199 198 194);
 }
 
 .photo-container-visible {
@@ -188,10 +188,15 @@ ul {
   height: 400px;
   width: 600px;
   border-style: solid;
-  border-radius: 4px;
+  border-radius: 15px;
   border-color: cadetblue;
-
+  box-shadow: 0 0 10px rgba(10, 10, 10, 0.4);
   cursor: zoom-in;
+}
+
+.photo-link {
+  display: flex;
+  justify-content: center;
 }
 
 .photo-hidden {
@@ -231,8 +236,7 @@ ul {
 
   justify-content: space-around;
   align-items: center;
-  /* height: 90%;
-  width: 90%; */
+  height: 100%;
 }
 
 .video-responsive {
@@ -254,7 +258,7 @@ ul {
 }
 
 .video-description {
-  width: 40%;
+  width: 80%;
   text-align: center;
   margin: 40px;
   font-size: 2rem;
@@ -304,7 +308,7 @@ ul {
 .contact-container {
   display: flex;
   flex-flow: column wrap;
-  /* position: absolute; */
+  position: absolute;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -476,9 +480,6 @@ ul {
     justify-content: center;
     width: 95%;
     height: auto;
-  }
-
-  .drone-video {
   }
 
   /* CONTACT MOBILE */

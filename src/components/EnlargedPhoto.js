@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const EnlargedPhoto = ({ enlargedPhoto }) => {
   return (
     <div className="enlarged-photo-container">
-      <Link to="/photos">
+      <Link className="photo-link" to="/photos">
         <ImageFadeIn className="enlarged-photo" src={enlargedPhoto.src} />
       </Link>
     </div>
